@@ -18,9 +18,8 @@ In order to reproduce the problem:
     tango_admin --add-server PyDsExpClient/test PyDsExpClient test/pydsexpclient/1
     ```
   
-2. Start PyDsExp: `python PyDsExp.py test`
-3. Start PyDsExpClient (either from taurus or from pytango directory): `python 
-   PyDsExpClient.py test`
+2. Start PyDsExp: `python3 PyDsExp.py test`
+3. Start PyDsExpClient (either from taurus or from pytango directory): `python3 PyDsExpClient.py test`
 4. Call Start command of PyDsExpClient device.
 5. Wait...
 
