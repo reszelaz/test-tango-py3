@@ -8,9 +8,16 @@ In order to reproduce the problem:
 1. Register in Tango Database:
   * PyDsExp DS with instance name `test` with 4 devices of PyDsExp class with 
     the following names: `test/pydsexp/1`, `test/pydsexp/2`, `test/pydsexp/3` and 
-    `test/pydsexp/4`
+    `test/pydsexp/4`:
+    ```console
+    tango_admin --add-server PyDsExp/test PyDsExp test/pydsexp/1,test/pydsexp/2,test/pydsexp/3,test/pydsexp/4    
+    ```
   * PyDsExpClient DS with instance name `test` with 1 device of PyDsExpClient 
-  class with name: `test/pydsexpclient/1`
+  class with name: `test/pydsexpclient/1`:
+  ```console
+  tango_admin --add-server PyDsExpClient/test PyDsExpClient test/pydsexpclient/1
+  ```
+  
 2. Start PyDsExp: `python PyDsExp.py test`
 3. Start PyDsExpClient (either from taurus or from pytango directory): `python 
    PyDsExpClient.py test`
