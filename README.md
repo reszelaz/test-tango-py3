@@ -13,10 +13,10 @@ In order to reproduce the problem:
     tango_admin --add-server PyDsExp/test PyDsExp test/pydsexp/1,test/pydsexp/2,test/pydsexp/3,test/pydsexp/4    
     ```
   * PyDsExpClient DS with instance name `test` with 1 device of PyDsExpClient 
-  class with name: `test/pydsexpclient/1`:
-  ```console
-  tango_admin --add-server PyDsExpClient/test PyDsExpClient test/pydsexpclient/1
-  ```
+    class with name: `test/pydsexpclient/1`:
+    ```console
+    tango_admin --add-server PyDsExpClient/test PyDsExpClient test/pydsexpclient/1
+    ```
   
 2. Start PyDsExp: `python PyDsExp.py test`
 3. Start PyDsExpClient (either from taurus or from pytango directory): `python 
