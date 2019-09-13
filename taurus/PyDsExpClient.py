@@ -36,7 +36,9 @@ class JobThread(threading.Thread):
             print('In job; {} iteration'.format(i))
             for nb_dev in range(1, 5):
                 dev = taurus.Device(DEV_NAME_PATTERN.format(nb_dev))
-                dev["attr1"]
+                attr = dev["attr1"]
+                attr._unsubscribeConfEvents()
+                dev.my_state._unsubscribeConfEvents()
             time.sleep(.01)
         if self.dev:
             self.dev.set_state(PyTango.DevState.ON)

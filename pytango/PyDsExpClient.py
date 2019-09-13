@@ -158,6 +158,9 @@ class JobThread(threading.Thread):
             for nb_dev in range(1, 5):
                 dev = PyTangoDevice(DEV_NAME_PATTERN.format(nb_dev))
                 attr = dev.getAttribute("attr1")
+                while len(attr._ids):
+                    id_ = attr._ids.pop()
+                    dev.dp.unsubscribe_event(id_)
             time.sleep(0.01)
 
 
